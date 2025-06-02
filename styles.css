@@ -1,0 +1,1633 @@
+/* Global Styles */
+:root {
+    --primary-color: #7f5af6;
+    --primary-hover: #9c89f8;
+    --text-color: #fffffe;
+    --text-light: #94a1b2;
+    --bg-color: #16161a;
+    --bg-light: #24262b;
+    --border-color: #414551;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+/* Header Styles */
+header {
+    background-color: var(--bg-light);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a {
+    font-weight: 500;
+    color: var(--text-light);
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Hero Section */
+.hero {
+    padding: 6rem 0;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: var(--text-color);
+}
+
+.hero .subtitle {
+    font-size: 1.35rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+}
+
+.search-box {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background-color: var(--bg-light);
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.search-box input::placeholder {
+    color: var(--text-light);
+}
+
+.search-box button {
+    padding: 0 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.search-box button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Search Suggestions Styles */
+.search-suggestions {
+    position: absolute; /* Position below the search box */
+    top: 100%; /* Place right below the search box */
+    left: 0;
+    right: 0;
+    background-color: var(--bg-light); /* Use slightly lighter dark background */
+    border: 1px solid var(--border-color); /* Use theme border color */
+    border-top: none; /* No border at the top */
+    border-radius: 0 0 0.5rem 0.5rem; /* Rounded corners at the bottom */
+    box-shadow: var(--shadow); /* Use theme shadow */
+    z-index: 50; /* Ensure it appears above other content */
+    max-height: 200px; /* Limit height and add scrolling */
+    overflow-y: auto;
+    list-style: none; /* Remove default list styling if it were a ul */
+    padding: 0;
+    margin: 0;
+}
+
+.search-suggestion-item {
+    padding: 0.75rem 1rem; /* Padding for each suggestion item */
+    cursor: pointer;
+    color: var(--text-color); /* Text color */
+    transition: background-color 0.2s ease;
+}
+
+.search-suggestion-item:hover {
+    background-color: var(--border-color); /* Highlight color on hover */
+}
+
+/* Roadmap Categories */
+.roadmap-categories {
+    padding: 5rem 0;
+    background-color: var(--bg-color);
+}
+
+.roadmap-categories h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    color: var(--text-color);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.category-card {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.category-card .icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.category-card h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.category-card p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.category-card .btn {
+    margin-top: auto;
+}
+
+/* Features Section */
+.features {
+    padding: 5rem 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    color: var(--text-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: var(--bg-light);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.feature-card .icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.feature-card h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.feature-card p {
+    color: var(--text-light);
+}
+
+/* Community Section */
+.community {
+    padding: 5rem 0;
+    text-align: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.community h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.community p {
+    color: var(--text-light);
+    margin-bottom: 3.5rem;
+}
+
+.community-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 3.5rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat .number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat .label {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.community-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.community-buttons .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-light);
+    padding: 3rem 0 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-light);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--text-color);
+}
+
+.footer-col p {
+    color: var(--text-light);
+    margin-bottom: 1.25rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.9rem;
+}
+
+.footer-col ul li a {
+    color: var(--text-light);
+    transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.terra-copyright {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color); /* Ensure text color is readable */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+        padding: 0 1.5rem;
+    }
+
+    .roadmap-diagram .branches {
+        gap: 25px;
+    }
+
+    .roadmap-list {
+         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+         gap: 1.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 960px;
+        padding: 0 1rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.25rem;
+    }
+
+    .categories-grid, .features-grid, .footer-grid, .roadmap-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .roadmap-diagram .branches {
+        gap: 20px; /* Further reduce gap */
+    }
+
+    .roadmap-diagram .branch > .node {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
+     .roadmap-diagram .sub-branches .node {
+        padding: 6px 12px;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .roadmap-diagram .sub-branches {
+        padding-left: 20px;
+    }
+
+    .roadmap-diagram .sub-branches::before {
+        left: 10px;
+    }
+
+    .roadmap-diagram .sub-branches .node::before {
+        left: -10px;
+        width: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav, .auth-buttons {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.25rem;
+    }
+
+    .community-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .community-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .community-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-links {
+        margin-top: 1rem;
+    }
+
+    .hero {
+        padding: 4rem 0;
+    }
+
+    .roadmap-categories h2, .features h2, .community h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .categories-grid, .features-grid, .footer-grid, .roadmap-list {
+        grid-template-columns: 1fr;
+    }
+
+    .roadmap-diagram {
+        padding: 2rem 0.5rem;
+        text-align: left;
+    }
+
+    .roadmap-diagram .root-node {
+        font-size: 20px;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+        display: block;
+        text-align: center;
+    }
+
+    .roadmap-diagram .branches {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px; /* Adjust gap for stacked branches */
+        padding-top: 30px;
+        padding-left: 20px;
+        flex-wrap: nowrap; /* Prevent wrapping when stacked */
+    }
+
+    .roadmap-diagram .branches::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 10px;
+         transform: none;
+         width: 2px;
+         height: 30px;
+         background-color: var(--border-color);
+    }
+
+    .roadmap-diagram .branch {
+         align-items: flex-start;
+         padding-top: 0;
+         padding-left: 20px;
+         width: 100%;
+    }
+
+     .roadmap-diagram .branch > .node::after {
+         content: '';
+         position: absolute;
+         top: 50%;
+         left: -20px;
+         transform: translateY(-50%);
+         width: 20px;
+         height: 2px;
+         background-color: var(--border-color);
+    }
+
+    .roadmap-diagram .branch > .node {
+        font-size: 16px;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .roadmap-diagram .sub-branches {
+         padding-left: 30px;
+    }
+
+     .roadmap-diagram .sub-branches::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 15px;
+         width: 2px;
+         height: 100%;
+         background-color: var(--border-color);
+    }
+
+    .roadmap-diagram .sub-branches .node {
+         font-size: 14px;
+         margin-bottom: 10px;
+         text-align: left;
+    }
+
+    .roadmap-diagram .sub-branches .node::before {
+        left: -15px;
+        width: 15px;
+    }
+
+    .roadmap-diagram .language-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+         padding-left: 30px;
+    }
+
+     .roadmap-diagram .language-list::before {
+         display: block;
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 15px;
+         width: 2px;
+         height: 100%;
+         background-color: var(--border-color);
+    }
+
+     .roadmap-diagram .language-list .node {
+         margin-bottom: 0;
+     }
+
+     .roadmap-diagram .language-list .node::before {
+         display: block;
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: -15px;
+          transform: translateY(-50%);
+          width: 15px;
+          height: 2px;
+          background-color: var(--border-color);
+          z-index: 0;
+     }
+
+     .roadmap-diagram .sub-branches .sub-branch {
+         padding-left: 30px;
+    }
+
+     .roadmap-diagram .sub-branches .sub-branch::before {
+         left: 15px;
+     }
+
+     .roadmap-diagram .sub-branches .sub-branch > .node::before {
+         left: -15px;
+         width: 15px;
+     }
+
+     .roadmap-diagram .sub-branches .sub-branch .sub-branches {
+         padding-left: 20px;
+     }
+
+     .roadmap-diagram .sub-branches .sub-branch .sub-branches::before {
+         left: 10px;
+     }
+
+     .roadmap-diagram .sub-branches .sub-branch .sub-branches .node::before {
+         left: -10px;
+         width: 10px;
+     }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.1rem;
+    }
+
+     .search-box input {
+         padding: 0.7rem 1rem;
+         font-size: 1rem;
+     }
+
+     .search-box button {
+         padding: 0 1rem;
+         font-size: 1rem;
+     }
+
+     .category-card, .feature-card {
+         padding: 1.5rem;
+     }
+
+     .category-card h3, .feature-card h3 {
+         font-size: 1.2rem;
+     }
+
+     .stat .number {
+         font-size: 2.5rem;
+     }
+
+     .stat .label {
+         font-size: 1rem;
+     }
+
+     .community-stats {
+         gap: 1.5rem;
+     }
+
+     .footer-col h4 {
+         font-size: 1.1rem;
+     }
+
+     .footer-col ul li a {
+         font-size: 1rem;
+     }
+
+     .social-links a {
+         font-size: 1.3rem;
+     }
+
+     .footer-bottom {
+         font-size: 0.8rem;
+     }
+
+     .roadmap-diagram .branches {
+         gap: 15px; /* Further reduce gap for very small screens */
+     }
+
+     .roadmap-diagram .branch > .node {
+         font-size: 14px;
+         padding: 6px 12px;
+     }
+
+     .roadmap-diagram .sub-branches .node {
+         font-size: 12px;
+         padding: 5px 10px;
+         margin-bottom: 8px;
+     }
+
+     .roadmap-diagram .sub-branches {
+         padding-left: 25px;
+     }
+
+     .roadmap-diagram .sub-branches::before {
+         left: 12px;
+     }
+
+     .roadmap-diagram .sub-branches .node::before {
+         left: -12px;
+         width: 12px;
+     }
+
+      .roadmap-diagram .language-list {
+         padding-left: 25px;
+      }
+
+      .roadmap-diagram .language-list::before {
+          left: 12px;
+      }
+
+      .roadmap-diagram .language-list .node::before {
+          left: -12px;
+          width: 12px;
+      }
+
+     .roadmap-diagram .sub-branches .sub-branch {
+         padding-left: 25px;
+     }
+
+     .roadmap-diagram .sub-branches .sub-branch::before {
+         left: 12px;
+     }
+
+     .roadmap-diagram .sub-branches .sub-branch > .node::before {
+         left: -12px;
+         width: 12px;
+     }
+
+     .roadmap-diagram .sub-branches .sub-branch .sub-branches {
+         padding-left: 15px;
+     }
+
+     .roadmap-diagram .sub-branches .sub-branch .sub-branches::before {
+         left: 8px;
+     }
+
+     .roadmap-diagram .sub-branches .sub-branch .sub-branches .node::before {
+         left: -8px;
+         width: 8px;
+       }
+}
+
+/* Markmap specific styling */
+.markmap-box {
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    background-color: var(--bg-light);
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+}
+
+.markmap-node text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    fill: var(--text-color);
+    font-weight: 500;
+}
+
+.markmap-line {
+    stroke: var(--primary-color);
+    stroke-width: 2px;
+    fill: none;
+}
+
+.markmap-hook {
+    stroke: var(--primary-color);
+    stroke-width: 2px;
+}
+
+.markmap-node circle {
+    fill: var(--primary-color);
+    stroke: var(--bg-light);
+    stroke-width: 2px;
+}
+
+.markmap-node line {
+    stroke: var(--border-color);
+}
+
+.markmap-node text tspan {
+    dy: 1.3em;
+}
+
+/* Static Roadmap Display Styles */
+.roadmap-static-display {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.roadmap-static-display .central-node {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    position: relative;
+}
+
+.branch-card {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.branch-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.sub-branches {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sub-branch-card {
+    border-left: 3px solid var(--secondary-color);
+    padding-left: 1rem;
+    position: relative;
+}
+
+.sub-branch-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+}
+
+.items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.item-card {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-card:last-child {
+    margin-bottom: 0;
+}
+
+.item-card:hover {
+    background-color: var(--bg-hover);
+    transform: translateY(-2px);
+}
+
+.item-card.completed {
+    background-color: var(--completed-bg);
+    border-color: var(--completed-border);
+    color: var(--completed-text);
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+.item-card .completion-icon {
+    color: var(--completed-icon);
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    display: none;
+}
+
+.item-card.completed .completion-icon {
+    display: inline-block;
+}
+
+/* Connectors */
+
+/* Line from central node to branch cards (simplified) */
+.branches-grid::before {
+    content: '';
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 1.5rem;
+    background-color: var(--secondary-color);
+}
+
+/* Lines from branch-title to sub-branch-cards */
+.branch-card .branch-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 1.5rem;
+    background-color: var(--secondary-color);
+}
+
+.sub-branches {
+    border-left: 3px solid var(--secondary-color);
+    padding-left: 1rem;
+    position: relative;
+}
+
+/* Horizontal lines from sub-branch-card border to items-list */
+.sub-branch-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1rem;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+/* Vertical lines between items in a list */
+.items-list .item-card::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background-color: var(--secondary-color);
+}
+
+/* Horizontal line connecting vertical line to item card */
+.items-list .item-card::after {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+/* Adjust first item's vertical line to connect to sub-branch line */
+.items-list .item-card:first-child::before {
+    top: 50%;
+    height: 50%;
+}
+
+/* Adjust last item's vertical line */
+.items-list .item-card:last-child::before {
+    height: 50%;
+}
+
+/* If there's only one item, make the vertical line just a point */
+.items-list .item-card:first-child:last-child::before {
+    height: 0;
+}
+
+/* --- Roadmap List Page Styling (roadmaps.html) --- */
+.roadmap-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.roadmap-list section {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.roadmap-list h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.roadmap-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.roadmap-list li {
+    margin-bottom: 0.75rem;
+}
+
+.roadmap-list li:last-child {
+    margin-bottom: 0;
+}
+
+.roadmap-list li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.roadmap-list li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Markmap Styles --- */
+
+.markmap {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styling for different levels of nodes */
+.markmap-node circle {
+    r: 5px;
+}
+
+.markmap-node text {
+    fill: var(--text-color);
+    font-size: 14px;
+}
+
+/* Styling for the root node */
+.markmap-node.markmap-root circle {
+    fill: var(--primary-color);
+    r: 8px;
+}
+
+.markmap-node.markmap-root text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Styling for branch nodes (level 1) - trying a rectangular look */
+.markmap-node.markmap-level-1 circle {
+    display: none;
+}
+
+.markmap-node.markmap-level-1 rect {
+    fill: var(--card-background);
+    stroke: var(--accent-color);
+    stroke-width: 1.5px;
+    rx: 5px; ry: 5px;
+}
+
+.markmap-node.markmap-level-1 text {
+    fill: var(--accent-color);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Styling for sub-branch nodes (level 2 and below) - also rectangular */
+.markmap-node.markmap-level-2 circle,
+.markmap-node.markmap-level-3 circle,
+.markmap-node.markmap-level-4 circle {
+     display: none;
+}
+
+.markmap-node.markmap-level-2 rect,
+.markmap-node.markmap-level-3 rect,
+.markmap-node.markmap-level-4 rect {
+    fill: var(--card-background);
+    stroke: var(--border-color);
+    stroke-width: 1px;
+    rx: 3px; ry: 3px;
+}
+
+.markmap-node.markmap-level-2 text,
+.markmap-node.markmap-level-3 text,
+.markmap-node.markmap-level-4 text {
+    fill: var(--text-color);
+    font-size: 14px;
+}
+
+/* Styling for lines/links */
+.markmap-link {
+    stroke: var(--border-color);
+    stroke-width: 1.5px;
+    fill: none;
+}
+
+/* Add hover effects */
+.markmap-node:hover text {
+    text-decoration: underline;
+}
+
+.markmap-node:hover circle,
+.markmap-node:hover rect {
+    stroke-width: 2px;
+    stroke: var(--primary-color);
+}
+
+/* Add more specific Markmap styles to match reference image */
+
+/* Style for the root node (Level 0) */
+.markmap-node.markmap-level-0 circle {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+    r: 10px;
+}
+
+.markmap-node.markmap-level-0 text {
+    fill: var(--text-color);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Style for Level 1 nodes (main branches) - make them rectangular */
+.markmap-node.markmap-level-1 circle {
+    display: none;
+}
+
+.markmap-node.markmap-level-1 rect {
+    fill: var(--card-background);
+    stroke: var(--accent-color);
+    stroke-width: 2px;
+    rx: 8px; ry: 8px;
+}
+
+.markmap-node.markmap-level-1 text {
+    fill: var(--accent-color);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Style for Level 2 nodes (sub-branches) - make them rectangular */
+.markmap-node.markmap-level-2 circle {
+    display: none;
+}
+
+.markmap-node.markmap-level-2 rect {
+    fill: var(--bg-light);
+    stroke: var(--border-color);
+    stroke-width: 1px;
+    rx: 5px; ry: 5px;
+}
+
+.markmap-node.markmap-level-2 text {
+    fill: var(--text-color);
+    font-size: 14px;
+}
+
+/* Style for Level 3 and deeper nodes - also rectangular */
+.markmap-node.markmap-level-3 circle,
+.markmap-node.markmap-level-4 circle,
+.markmap-node.markmap-level-5 circle {
+     display: none;
+}
+
+.markmap-node.markmap-level-3 rect,
+.markmap-node.markmap-level-4 rect,
+.markmap-node.markmap-level-5 rect {
+    fill: var(--bg-color);
+    stroke: var(--border-color);
+    stroke-width: 1px;
+    rx: 3px; ry: 3px;
+}
+
+.markmap-node.markmap-level-3 text,
+.markmap-node.markmap-level-4 text,
+.markmap-node.markmap-level-5 text {
+    fill: var(--text-light);
+    font-size: 13px;
+}
+
+/* Styling for lines/links to match the image */
+.markmap-link {
+    stroke: var(--border-color);
+    stroke-width: 1.5px;
+    fill: none;
+}
+
+/* Hover effect on nodes */
+.markmap-node:hover text {
+    text-decoration: underline;
+    fill: var(--primary-hover);
+}
+
+.markmap-node:hover rect {
+    stroke-width: 2px;
+    stroke: var(--primary-color);
+}
+
+/* You might need more specific rules for different branches if colors need to vary per branch */
+
+/* Example: Styling for a specific branch (requires identifying based on content/structure) */
+/* .markmap-node.markmap-level-1:nth-child(1) rect { stroke: blue; } */
+/* .markmap-node.markmap-level-1:nth-child(2) rect { stroke: green; } */
+
+/* --- Custom HTML/CSS Roadmap Diagram Styles --- */
+
+.roadmap-diagram {
+    position: relative;
+    padding: 3rem 1rem; /* Keep initial padding */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    text-align: center;
+}
+
+.roadmap-diagram .root-node {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.roadmap-diagram .branches {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Slightly reduced gap between main branches */
+    position: relative;
+    padding-top: 40px;
+    flex-wrap: wrap; /* Allow branches to wrap if needed on wider screens */
+}
+
+/* Line from root node to branches container */
+.roadmap-diagram .branches::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 40px;
+    background-color: var(--border-color);
+}
+
+.roadmap-diagram .branch {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.roadmap-diagram .branch:nth-child(1) { animation-delay: 0.1s; }
+.roadmap-diagram .branch:nth-child(2) { animation-delay: 0.2s; }
+.roadmap-diagram .branch:nth-child(3) { animation-delay: 0.3s; }
+.roadmap-diagram .branch:nth-child(4) { animation-delay: 0.4s; }
+.roadmap-diagram .branch:nth-child(5) { animation-delay: 0.5s; }
+.roadmap-diagram .branch:nth-child(6) { animation-delay: 0.6s; }
+.roadmap-diagram .branch:nth-child(7) { animation-delay: 0.7s; }
+.roadmap-diagram .branch:nth-child(8) { animation-delay: 0.8s; }
+.roadmap-diagram .branch:nth-child(9) { animation-delay: 0.9s; }
+.roadmap-diagram .branch:nth-child(10) { animation-delay: 1.0s; }
+.roadmap-diagram .branch:nth-child(11) { animation-delay: 1.1s; }
+.roadmap-diagram .branch:nth-child(12) { animation-delay: 1.2s; }
+.roadmap-diagram .branch:nth-child(13) { animation-delay: 1.3s; }
+.roadmap-diagram .branch:nth-child(14) { animation-delay: 1.4s; }
+.roadmap-diagram .branch:nth-child(15) { animation-delay: 1.5s; }
+
+.roadmap-diagram .branch > .node {
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Line from branch node to sub-branches container */
+.roadmap-diagram .branch > .node::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background-color: var(--border-color);
+}
+
+.roadmap-diagram .sub-branches {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 30px;
+    position: relative;
+}
+
+/* Vertical line connecting sub-branches */
+.roadmap-diagram .sub-branches::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--border-color);
+}
+
+.roadmap-diagram .sub-branches .node {
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.roadmap-diagram .sub-branches .node:last-child {
+    margin-bottom: 0;
+}
+
+/* Horizontal line connecting sub-node to the vertical line */
+.roadmap-diagram .sub-branches .node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 0;
+}
+
+/* Specific styling for the language list to try and match the image's horizontal flow */
+.roadmap-diagram .language-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.roadmap-diagram .language-list::before {
+    display: none;
+}
+
+.roadmap-diagram .language-list .node {
+    margin-bottom: 0;
+}
+
+.roadmap-diagram .language-list .node::before {
+     display: none;
+}
+
+/* Need to manually create lines for the language list based on layout */
+/* This will be complex and require absolute positioning or SVG */
+
+/* Styling for deeper nested sub-branches (e.g., in NoSQL) */
+.roadmap-diagram .sub-branches .sub-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.roadmap-diagram .sub-branches .sub-branch::before {
+     content: '';
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--border-color);
+}
+
+.roadmap-diagram .sub-branches .sub-branch > .node {
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 13px;
+    margin-bottom: 10px;
+     position: relative;
+    z-index: 1;
+}
+
+.roadmap-diagram .sub-branches .sub-branch > .node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 0;
+}
+
+.roadmap-diagram .sub-branches .sub-branch .sub-branches {
+    padding-left: 15px;
+}
+
+.roadmap-diagram .sub-branches .sub-branch .sub-branches::before {
+    left: 7px;
+}
+
+.roadmap-diagram .sub-branches .sub-branch .sub-branches .node::before {
+    left: -7px;
+    width: 7px;
+}
+
+/* Lines between main branches and their first sub-branch node */
+/* This is complex with pure CSS and might require manual positioning or SVG */
+
+
+/* Note: Creating complex, arbitrary connections like in the reference image dynamically 
+   with pure HTML/CSS is extremely difficult. The CSS above creates a basic hierarchical 
+   visual structure with vertical and horizontal connectors for direct parent-child 
+   relationships. Curved or cross-branch connections would be significantly more complex. */
+
+/* Add animations and transitions for roadmap */
+.roadmap-diagram .branch {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.roadmap-diagram .branch:nth-child(1) { animation-delay: 0.1s; }
+.roadmap-diagram .branch:nth-child(2) { animation-delay: 0.2s; }
+.roadmap-diagram .branch:nth-child(3) { animation-delay: 0.3s; }
+.roadmap-diagram .branch:nth-child(4) { animation-delay: 0.4s; }
+.roadmap-diagram .branch:nth-child(5) { animation-delay: 0.5s; }
+.roadmap-diagram .branch:nth-child(6) { animation-delay: 0.6s; }
+.roadmap-diagram .branch:nth-child(7) { animation-delay: 0.7s; }
+.roadmap-diagram .branch:nth-child(8) { animation-delay: 0.8s; }
+.roadmap-diagram .branch:nth-child(9) { animation-delay: 0.9s; }
+.roadmap-diagram .branch:nth-child(10) { animation-delay: 1.0s; }
+.roadmap-diagram .branch:nth-child(11) { animation-delay: 1.1s; }
+.roadmap-diagram .branch:nth-child(12) { animation-delay: 1.2s; }
+.roadmap-diagram .branch:nth-child(13) { animation-delay: 1.3s; }
+.roadmap-diagram .branch:nth-child(14) { animation-delay: 1.4s; }
+.roadmap-diagram .branch:nth-child(15) { animation-delay: 1.5s; }
+
+
+.roadmap-diagram .node {
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roadmap-diagram .node:hover {
+    background-color: var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* Style for highlighted roadmap nodes */
+.roadmap-diagram .node.highlighted {
+    outline: 2px solid var(--primary-hover);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Keyframes for fade in effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Add more complex animations or transitions later */
+
+/* Style for highlighted roadmap list items */
+.roadmap-list li.highlighted a {
+    color: var(--primary-color); /* Highlight the link text */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.roadmap-list li.highlighted {
+    background-color: var(--bg-light); /* Add a subtle background */
+    border-left: 4px solid var(--primary-color); /* Add a colored border */
+    padding-left: 1rem; /* Adjust padding due to border */
+}
+
+/* Animation for category card icons on index.html */
+.category-card .icon i {
+    transition: transform 0.3s ease-in-out;
+}
+
+.category-card:hover .icon i {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+    color: var(--primary-color); /* Change color on hover */
+}
+
+.terra-content-copyright {
+    font-size: 2rem; /* Make the font size larger */
+    font-weight: 800; /* Make the font bold */
+    text-align: center;
+    margin-top: 2rem; /* Add some space above the text */
+    color: var(--primary-color); /* Use the primary color for distinction */
+}

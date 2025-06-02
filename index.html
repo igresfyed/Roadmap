@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevRoadmaps - Step by step guides for developers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- markmap CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.15.3/dist/index.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">DevRoadmaps</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="roadmaps.html">Roadmaps</a></li>
+                <li><a href="guides.html">Guides</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </nav>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+
+    <main>
+        <section class="hero" id="hero-section">
+            <div class="container">
+                <h1>Developer Roadmaps</h1>
+                <p class="subtitle">Step by step guides and paths to learn different tools and technologies</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Search roadmaps...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <!-- Search Suggestions Container -->
+                <div id="search-suggestions" class="search-suggestions" style="display: none;">
+                    <!-- Suggestions will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="roadmap-categories" id="roadmap-categories-section">
+            <div class="container">
+                <h2>Popular Roadmaps</h2>
+                <div class="categories-grid">
+                    <div class="category-card" data-roadmap="frontend">
+                        <div class="icon"><i class="fas fa-code"></i></div>
+                        <h3>Frontend Developer</h3>
+                        <p>Step by step guide to becoming a modern frontend developer</p>
+                        <a href="frontend.html" class="btn btn-outline view-roadmap-btn">View Roadmap</a>
+                    </div>
+                    <div class="category-card" data-roadmap="backend">
+                        <div class="icon"><i class="fas fa-server"></i></div>
+                        <h3>Backend Developer</h3>
+                        <p>Step by step guide to becoming a backend developer</p>
+                        <a href="backend.html" class="btn btn-outline view-roadmap-btn">View Roadmap</a>
+                    </div>
+                    <div class="category-card" data-roadmap="mobile">
+                        <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Mobile Developer</h3>
+                        <p>Step by step guide to becoming a mobile developer</p>
+                        <a href="mobile.html" class="btn btn-outline view-roadmap-btn">View Roadmap</a>
+                    </div>
+                    <div class="category-card" data-roadmap="devops">
+                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>DevOps Engineer</h3>
+                        <p>Step by step guide to becoming a DevOps engineer</p>
+                        <a href="devops.html" class="btn btn-outline view-roadmap-btn">View Roadmap</a>
+                    </div>
+                    <div class="category-card" data-roadmap="fullstack">
+                        <div class="icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Full Stack Developer</h3>
+                        <p>Step by step guide to becoming a full stack developer</p>
+                        <a href="fullstack.html" class="btn btn-outline view-roadmap-btn">View Roadmap</a>
+                    </div>
+                    <div class="category-card" data-roadmap="cs">
+                        <div class="icon"><i class="fas fa-brain"></i></div>
+                        <h3>Computer Science</h3>
+                        <p>Step by step guide to learning computer science</p>
+                        <a href="cs.html" class="btn btn-outline view-roadmap-btn">View Roadmap</a>
+                    </div>
+                    <!-- New Roadmap Categories -->
+                    <div class="category-card" data-roadmap="machine-learning">
+                        <div class="icon"><i class="fas fa-robot"></i></div>
+                        <h3>Machine Learning Engineer</h3>
+                        <p>Step by step guide to becoming a Machine Learning Engineer</p>
+                        <a href="machine_learning.html" class="btn btn-outline view-roadmap-btn">View Roadmap</a>
+                    </div>
+                    <div class="category-card" data-roadmap="programming-languages">
+                        <div class="icon"><i class="fas fa-code-branch"></i></div>
+                        <h3>Programming Languages</h3>
+                        <p>Roadmaps to learn various programming languages</p>
+                        <a href="programming_languages.html" class="btn btn-outline view-roadmap-btn">View Roadmap</a>
+                    </div>
+                    <div class="category-card" data-roadmap="cloud-engineering">
+                        <div class="icon"><i class="fas fa-cloud"></i></div>
+                        <h3>Cloud Engineer</h3>
+                        <p>Step by step guide to becoming a Cloud Engineer (AWS, Azure, GCP)</p>
+                        <a href="cloud_engineering.html" class="btn btn-outline view-roadmap-btn">View Roadmap</a>
+                    </div>
+                    <div class="category-card" data-roadmap="software-engineering">
+                        <div class="icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Software Engineering</h3>
+                        <p>Principles and practices of modern Software Engineering</p>
+                        <a href="software_engineering.html" class="btn btn-outline view-roadmap-btn">View Roadmap</a>
+                    </div>
+                    <div class="category-card" data-roadmap="blockchain">
+                        <div class="icon"><i class="fas fa-link"></i></div>
+                        <h3>Blockchain Developer</h3>
+                        <p>Step by step guide to becoming a Blockchain Developer</p>
+                        <a href="blockchain.html" class="btn btn-outline view-roadmap-btn">View Roadmap</a>
+                    </div>
+                    <div class="category-card" data-roadmap="embedded-systems">
+                        <div class="icon"><i class="fas fa-microchip"></i></div>
+                        <h3>Embedded Systems Engineer</h3>
+                        <p>Step by step guide to becoming an Embedded Systems Engineer</p>
+                        <a href="embedded_systems.html" class="btn btn-outline view-roadmap-btn">View Roadmap</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="markmap-section" class="content" style="display: none; padding-top: 2rem;">
+            <div class="container">
+                <h2 id="roadmap-title" style="text-align: center; margin-bottom: 1.5rem;"></h2>
+                <svg id="markmap-svg" style="width: 100%; height: 700px;"></svg>
+                <button id="close-mindmap-btn" class="btn btn-secondary" style="display: block; margin: 2rem auto;">Close Mind Map</button>
+            </div>
+        </section>
+
+        <!-- Node Details Section (Initially hidden) -->
+        <section id="node-details-section" style="display: none; padding: 2rem; background-color: var(--bg-light); border-radius: 0.5rem; margin-top: 2rem;">
+            <div class="container">
+                <h3 id="node-details-title" style="margin-bottom: 1rem; color: var(--text-color);"><!----></h3>
+                <div id="node-details-content" style="color: var(--text-light); line-height: 1.6;"><!----></div>
+                <button id="close-details-btn" class="btn btn-outline" style="display: block; margin-top: 2rem;">Close Details</button>
+            </div>
+        </section>
+
+        <section class="features" id="features-section">
+            <div class="container">
+                <h2>Why Use DevRoadmaps?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-map"></i></div>
+                        <h3>Structured Learning Paths</h3>
+                        <p>Follow curated roadmaps that guide you through learning complex topics step by step.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-clock"></i></div>
+                        <h3>Save Time</h3>
+                        <p>Don't waste time figuring out what to learn next. We've done the research for you.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-sync-alt"></i></div>
+                        <h3>Always Updated</h3>
+                        <p>Our roadmaps are regularly updated with the latest technologies and best practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="community" id="community-section">
+            <div class="container">
+                <h2>Join Our Community</h2>
+                <p>Connect with thousands of developers learning together</p>
+                <div class="community-stats">
+                    <div class="stat">
+                        <div class="number">250,000+</div>
+                        <div class="label">Developers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">50+</div>
+                        <div class="label">Roadmaps</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">100+</div>
+                        <div class="label">Guides</div>
+                    </div>
+                </div>
+                <div class="community-buttons">
+                    <a href="#" class="btn btn-primary"><i class="fab fa-discord"></i> Discord</a>
+                    <a href="#" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Hidden Markdown Content -->
+    <script type="text/markdown" id="frontend-markdown">
+# Frontend Developer Roadmap
+
+## Internet
+  - How does the internet work?
+  - What is HTTP?
+  - What is Domain Name?
+  - What is hosting?
+  - DNS and how it works?
+  - Browsers and how they work?
+
+## HTML
+  - Learn the basics
+  - Writing Semantic HTML
+  - Forms and Validations
+  - Accessibility
+  - SEO Basics
+
+## CSS
+  - Learn the basics
+  - Making Layouts
+  - Responsive Design
+  - CSS Architectures (BEM, OOCSS)
+  - CSS Preprocessors (Sass, Less)
+  - CSS Frameworks (Bootstrap, TailwindCSS)
+
+## JavaScript
+  - Learn the basics
+  - DOM Manipulation
+  - Fetch API / Ajax (XHR)
+  - Modern JavaScript (ES6+)
+  - Package Managers (npm, yarn, pnpm)
+  - Bundlers (Webpack, Parcel, Vite)
+
+## Version Control Systems
+  - Git
+  - Repository Hosting (GitHub, GitLab, Bitbucket)
+
+## Pick a Framework
+  - React
+  - Angular
+  - Vue
+
+## Modern CSS
+  - Styled Components
+  - CSS Modules
+  - TailwindCSS
+
+## Web Security Knowledge
+  - HTTPS
+  - CORS
+  - Content Security Policy (CSP)
+  - OWASP Security Risks
+
+## Testing
+  - Jest
+  - React Testing Library
+  - Cypress
+  - Playwright
+
+## State Management
+  - Redux
+  - Context API
+  - Zustand, Valtio
+  - Type Checkers
+  - TypeScript
+  - Flow
+
+## Progressive Web Apps
+  - Service Workers
+  - Web Manifest
+  - Offline support
+
+## Server Side Rendering (SSR)
+  - Next.js
+  - Nuxt.js
+  - Angular Universal
+
+## GraphQL
+  - Apollo Client
+  - Relay
+
+## Static Site Generators (SSG)
+  - Hugo
+  - Eleventy
+  - Jekyll
+  - Next.js (Static Exports)
+
+## WebAssembly
+
+## Web Components
+
+## Optional
+  - Deno
+  - Serverless
+  - Web Sockets
+  - Web Push Notifications
+  - Payment Integration
+  - Animations
+  - Web Workers
+  - Internationalization
+  - Regular Expressions
+  - Design Patterns
+  - Microfrontends
+  - Web Performance
+  - Web Vitals
+  - SEO
+  - A/B Testing
+  - E-commerce
+  - Website Monetization
+  - Browser Extensions
+  - Cross-Browser Compatibility
+  - Debugging Tools
+  - Package Optimization
+  - Bundle Analysis
+  - Lighthouse
+  - Webpack Bundle Analyzer
+  - Source Maps
+  - Error Monitoring
+  - Sentry
+  - LogRocket
+  - Feature Flags
+  - Experimentation Platforms
+  - Vercel
+  - Netlify
+  - AWS Amplify
+  - Firebase Hosting
+  - Cloudflare Pages
+  - GitHub Pages
+  - Render
+  - DigitalOcean App Platform
+  - Heroku
+  - Railway
+  - Cyclic
+  - Fly.io
+  - Supabase
+  - Appwrite
+  - Backend as a Service (BaaS)
+  - Content Management Systems (CMS)
+  - Strapi
+  - Contentful
+  - Sanity
+  - WordPress
+  - Shopify
+  - Frontend as a Service (FaaS)
+  - Edge Functions
+  - Vercel Edge Functions
+  - Netlify Edge Functions
+  - Cloudflare Workers
+  - Deno Deploy
+  - Supabase Edge Functions
+  - Serverless Functions
+  - AWS Lambda
+  - Google Cloud Functions
+  - Azure Functions
+  - Netlify Functions
+  - Vercel Functions
+  - Supabase Functions
+  - Appwrite Cloud Functions
+  - Testing Libraries
+  - Jest
+  - React Testing Library
+  - Cypress
+  - Playwright
+  - Mock Service Worker
+  - Storybook
+  - Chromatic
+  - Testing Concepts
+  - Unit Testing
+  - Integration Testing
+  - End-to-End Testing
+  - Visual Regression Testing
+  - Accessibility Testing
+  - Performance Testing
+  - Security Testing
+  - SEO Testing
+  - Monitoring
+  - Uptime Monitoring
+  - Performance Monitoring
+  - Error Monitoring
+  - Logging
+  - Analytics
+  - Google Analytics
+  - PostHog
+  - Mixpanel
+  - Hotjar
+  - Sentry
+  - LogRocket
+  - Error Reporting
+  - Sentry
+  - LogRocket
+</script>
+
+    <script type="text/markdown" id="backend-markdown">
+# Backend Developer Roadmap
+
+## Learn a Language
+  - Python
+  - Node.js
+  - Java
+  - Go
+
+## Learn Databases
+  - Relational Databases (PostgreSQL, MySQL)
+  - NoSQL Databases (MongoDB, Cassandra)
+
+## Learn APIs
+  - REST
+  - GraphQL
+
+## Learn Caching
+  - Redis
+  - Memcached
+
+## Learn Security Basics
+  - Authentication
+  - Authorization
+
+## Learn Deployment
+  - Docker
+  - Kubernetes
+  - Cloud Providers (AWS, GCP, Azure)
+</script>
+
+    <script type="text/markdown" id="mobile-markdown">
+# Mobile Developer Roadmap
+
+## Learn a Platform
+  - Android (Kotlin, Java)
+  - iOS (Swift, Objective-C)
+  - Cross-Platform (React Native, Flutter)
+
+## Learn UI/UX
+  - Design Principles
+  - Platform Guidelines
+
+## Learn State Management
+  - Redux, MobX (React Native)
+  - Provider, BLoC (Flutter)
+
+## Learn APIs
+  - REST
+  - GraphQL
+
+## Learn Testing
+  - Unit Testing
+  - Integration Testing
+
+## Learn Deployment
+  - App Stores (Google Play Store, Apple App Store)
+</script>
+
+    <script type="text/markdown" id="devops-markdown">
+# DevOps Engineer Roadmap
+
+## Learn the Basics
+  - Operating Systems (Linux)
+  - Networking Basics
+  - Scripting (Bash, Python)
+
+## Learn CI/CD
+  - Jenkins, GitLab CI, GitHub Actions
+  - Understanding Pipelines
+
+## Learn Configuration Management
+  - Ansible, Chef, Puppet
+
+## Learn Containerization
+  - Docker
+  - Kubernetes
+  - Learn Monitoring and Logging
+  - Prometheus, Grafana
+  - ELK Stack
+
+## Learn Cloud Providers
+  - AWS, GCP, Azure
+</script>
+
+    <script type="text/markdown" id="fullstack-markdown">
+# Full Stack Developer Roadmap
+
+## Frontend Part
+  - HTML, CSS, JavaScript
+  - A Frontend Framework (React, Vue, Angular)
+
+## Backend Part
+  - A Backend Language (Python, Node.js, Java)
+  - Databases (SQL, NoSQL)
+  - APIs (REST, GraphQL)
+
+## DevOps Part
+  - Version Control (Git)
+  - Basic Deployment
+  - Understanding Servers
+</script>
+
+    <script type="text/markdown" id="cs-markdown">
+# Computer Science Roadmap
+
+## Learn Programming Basics
+  - Introduction to Programming
+  - Data Structures and Algorithms
+
+## Learn Computer Architecture
+  - How Computers Work
+  - Operating Systems
+
+## Learn Databases
+  - Database Systems
+  - SQL
+
+## Learn Networks
+  - Computer Networks
+  - Internet Protocols
+
+## Learn Software Engineering
+  - Software Design
+  - Testing
+
+## Learn Specialized Fields
+  - Artificial Intelligence
+  - Machine Learning
+  - Cybersecurity
+</script>
+
+    <script type="text/markdown" id="machine-learning-markdown">
+# Machine Learning Engineer Roadmap (Placeholder)
+
+## Basics
+  - Math and Statistics
+  - Programming (Python)
+
+## ML Fundamentals
+  - Data Preprocessing
+  - Model Training
+
+## Advanced Topics
+  - Deep Learning
+  - Reinforcement Learning
+</script>
+
+    <script type="text/markdown" id="programming-languages-markdown">
+# Programming Languages Roadmap (Placeholder)
+
+## Data Structures & Algorithms
+  - Big O Notation
+  - Common Data Structures
+  - Sorting and Searching Algorithms
+
+## Paradigms
+  - Object-Oriented Programming
+  - Functional Programming
+
+## Pick Languages
+  - Python
+  - JavaScript
+  - Java
+  - C++
+  - Go
+  - Rust
+</script>
+
+    <script type="text/markdown" id="cloud-engineering-markdown">
+# Cloud Engineer Roadmap (Placeholder)
+
+## Cloud Concepts
+  - IaaS, PaaS, SaaS
+  - Deployment Models
+
+## Pick a Cloud Provider
+  - AWS
+  - Azure
+  - GCP
+
+## Services
+  - Compute
+  - Storage
+  - Networking
+  - Databases
+</script>
+
+    <script type="text/markdown" id="software-engineering-markdown">
+# Software Engineering Roadmap (Placeholder)
+
+## Fundamentals
+  - Design Patterns
+  - Data Structures & Algorithms
+  - Version Control
+
+## Development Lifecycle
+  - Agile Methodologies
+  - CI/CD
+  - Testing Strategies
+
+## Architecture
+  - Monoliths vs Microservices
+  - API Design
+</script>
+
+    <script type="text/markdown" id="blockchain-markdown">
+# Blockchain Developer Roadmap (Placeholder)
+
+## Basics
+  - Cryptography
+  - Distributed Ledgers
+
+## Blockchain Platforms
+  - Ethereum
+  - Bitcoin
+  - Solana
+
+## Smart Contracts
+  - Solidity
+  - Rust (for Solana)
+</script>
+
+     <script type="text/markdown" id="embedded-systems-markdown">
+# Embedded Systems Engineer Roadmap (Placeholder)
+
+## Basics
+  - Digital Electronics
+  - Microcontrollers
+
+## Programming
+  - C/C++
+  - Assembly
+
+## RTOS
+  - FreeRTOS
+  - Zephyr
+
+## Communication Protocols
+  - I2C, SPI, UART
+  - Networking
+</script>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>DevRoadmaps</h4>
+                    <p>Step by step guides for developers</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Roadmaps</h4>
+                    <ul>
+                       <li><a href="roadmaps.html">All Roadmaps</a></li>
+                        <li><a href="frontend.html">Frontend Developer</a></li>
+                        <li><a href="backend.html">Backend Developer</a></li>
+                        <li><a href="fullstack.html">Full Stack Developer</a></li>
+                        <li><a href="devops.html">DevOps Engineer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="guides.html">Guides</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Sponsorships</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 DevRoadmaps. All rights reserved.</p>
+                <div class="footer-links">
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
